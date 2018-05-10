@@ -4,9 +4,13 @@
     <!-- <p>跳转到了page00界面</p> -->
     <ul>
       <li v-for="item in focusList" :key="">
+        <router-link :to="{name: 'childrenpage00', params: {id: item.id}}" tag="div">
+          <!-- //这里改变tag="div" 渲染样式可以改变 router-link的激活状态 -->
         <!-- <img :src="item.images" alt=""> //图片网址加载不出来 -->
-        <div class="content">{{item.title}}
+        <div class="content">
+          {{item.title}}
         </div>
+      </router-link>
       </li>
     </ul>
     <router-view></router-view>
@@ -21,8 +25,7 @@ export default {
   name: 'page00',
   data () {
     return {
-      focusList:[]
-
+      focusList:[],
     }
   },
   mounted() {
@@ -49,10 +52,11 @@ export default {
 }
 </script>
 <style scoped>
-
   a{
+
     display: block;
     margin-top: 30px;
+    text-decoraction: none;
   }
   ul{
     margin-top: 0px;
@@ -73,7 +77,9 @@ export default {
    border-bottom: 1px double   #f3f3f3;
    /* background-color: red; */
  }
-
+router-link{
+ text-decoration: none;
+}
 /* img{
   width: 40px;
   height: 40px;

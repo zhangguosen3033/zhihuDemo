@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import childrenpage00 from '@/components/page0/childrenpage00'
+import childrenpage01 from '@/components/page0/childrenpage01'
 import page00 from '@/components/page0/page00'
 import page01 from '@/components/page0/page01'
 import page02 from '@/components/page0/page02'
@@ -15,9 +16,14 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/childrenpage00',
+      path: '/childrenpage00/:id',
       name: 'childrenpage00',
       component: childrenpage00
+    },
+    {
+      path: '/childrenpage01/:id',
+      name: 'childrenpage01',
+      component: childrenpage01
     },
     {
       path: '/page00',

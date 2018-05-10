@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <a @click="$goRoute('/page00')">返回上一级</a>
-    <div v-html= "focusList" ></div>
+    <a @click="$goRoute('/page01')">返回上一级</a>
+    <div v-html= "focusList ? 'focusList':'专题接口出问题了'" ></div>
     <router-view></router-view>
   </div>
 
@@ -9,7 +9,7 @@
 
 <script >
 export default {
-  name: 'childrenpage00',
+  name: 'childrenpage01',
   data () {
     return {
       focusList:""
@@ -22,7 +22,7 @@ export default {
   methods: {
     getFocusLists() {
       var vm = this;
-      this.$http.get('/news/' + this.$route.params.id).then(function(res){
+      this.$http.get('/themes/' + this.$route.params.id).then(function(res){
         vm.focusList = res.data.body;
         console.log(vm.focusList);
       })

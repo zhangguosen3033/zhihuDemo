@@ -3,12 +3,13 @@
     <BaseHead></BaseHead>
     <ul>
       <li v-for="item in focusList" :key="">
+        <router-link :to="{name: 'childrenpage01', params: {id: item.id}}" tag="div">
         <!-- <img :src="item.images" alt=""> //图片网址加载不出来 -->
         <div class="content">
           <div class="title">{{item.name}}</div>
           <div class="description">{{item.description}}</div>
         </div>
-
+      </router-link>
       </li>
     </ul>
     <router-view></router-view>

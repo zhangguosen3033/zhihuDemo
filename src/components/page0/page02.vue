@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
     <BaseHead></BaseHead>
-    <p>啊啊啊啊啊  没有接口了写不动了  一脸懵逼 🐶🐶🐶🐶🐶</p>
+    <p>🐶🐶🐶🐶🐶    练习一把store</p>
+    <div class=""> 来自远方的赋值: {{author}}  🐶🐶 </div>
+
     <router-view></router-view>
   </div>
 
@@ -13,6 +15,12 @@ export default {
   name: 'page02',
   data () {
     return {
+    }
+  },
+  computed: {
+    author () {
+      // return this.$store.state.author   //初始方法
+      return this.$store.getters.getAuthor  //获取到了 数值  但是存在问题 刷新数据消失
     }
   },
   components: {

@@ -11,9 +11,12 @@ Vue.use(Router)
 //根据引入的头文件设置路由信息
 export default new Router({
   routes: [{
+      // path: '/',
+      // name: 'HelloWorld',
+      // component: HelloWorld
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'page00',
+      component: page00
     },
     {
       path: '/childrenpage00/:id',

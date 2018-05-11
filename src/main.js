@@ -4,11 +4,15 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import Vuex from 'vuex'
+import store from './store/store.js'
+
 Vue.prototype.$http = axios
+axios.defaults.baseURL = '/api/';
 
 Vue.config.productionTip = false
 
-axios.defaults.baseURL = '/api/';
+Vue.use(Vuex)
 
 // 设置路由跳转
 Vue.prototype.$goRoute = function(index) {
@@ -18,6 +22,7 @@ Vue.prototype.$goRoute = function(index) {
 new Vue({
   el: '#app',
   router,
+  store,
   components: {
     App
   },

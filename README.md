@@ -1,6 +1,7 @@
 # my-project
 
 > A Vue.js project   根据知乎接口自己练手的小项目 只简单的适配了移动端 iPhone6 7 8 为了练习使用Vue对webAPP的开发
+并新增了store进行简单的逻辑处理
 
 ## Build Setup
 
